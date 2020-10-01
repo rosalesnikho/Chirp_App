@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Cousine&family=Roboto:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"/>
+    <script src="{% static 'js/highlight.pack.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magic.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/atelier-cave-light.css' %}">
+    <meta charset="UTF-8">
+    <title>Chirp | Dev</title>
+</head>
+<body>
+<main class="main-wrapper">
+    <!--     Header & Navigation Area   -->
+    <header>
+        <nav id="navbar" class="navigation">
+            <section class="nav__menu container">
+                <!-- Add Menu Items here -->
+            </section>
+        </nav>
+    </header>
+    <!--     Content Area   -->
+    <div class="container content-wrapper">
+        {# Block HTML Content to Inject #}
+        {% block content %}
+
+        {% endblock %}
+    </div>
+</main>
+{#  Form Modal #}
+<script src="{% static 'js/form_modal.js' %}"></script>
+
+{# Highlighter #}
+<script>hljs.initHighlightingOnLoad();</script>
+
+{# Magic Animation #}
+<script>
+	const selector = document.querySelector('.modal')
+	selector.classList.add('magictime', 'vanishIn')
+</script>
+
+{# Sticky Header #}
+<script>
+	window.onscroll = function() {stickFunction()};
+
+	var navbar = document.getElementById("navbar");
+	var sticky = navbar.offsetTop;
+
+	function stickFunction() {
+		if (window.pageYOffset >= sticky) {
+			navbar.classList.add("sticky")
+		} else {
+			navbar.classList.remove("sticky");
+		}
+	}
+</script>
+
+</body>
+</html>

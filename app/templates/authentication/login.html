@@ -1,0 +1,33 @@
+{% extends '_base.html' %}
+
+{% block title %}Log In{% endblock %}
+
+{% block content %}
+    <div class="login_form_wrapper">
+        <div class="row">
+            <div class="column column-33 column-offset-25">
+                <div class="inner_login_wrapper card">
+                    {% if messages %}
+                        <h5>Oops! Try again</h5>
+                        <div>
+                            <dl class="reg-errors">
+                                {% for message in messages%}
+                                    <dt class="warning-message">{{message}}</dt>
+                                {% endfor %}
+                            </dl>
+                        </div>
+                    {% endif %}
+                    <h5>Log In</h5>
+                    <form action="auth/" method="post">
+                        {% csrf_token %}
+                        <div class="login_input">
+                            <input name="email" type="text" placeholder="email">
+                        </div>
+                        <input name="password" type="password" placeholder="password">
+                        <button type="submit">Log In</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

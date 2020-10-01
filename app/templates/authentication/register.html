@@ -1,0 +1,20 @@
+{% extends '_base.html' %}
+
+{% block title %}Register An Account{% endblock %}
+
+{% block content %}
+    <div class="register_form_wrapper">
+        <div class="row">
+            <div class="column column-40 column-offset-25">
+                <div class="inner_wrapper card">
+                    <h5>Register An Account</h5>
+                    <form action="{% url 'register' %}" method="POST">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
