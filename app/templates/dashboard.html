@@ -26,19 +26,26 @@
                 <div class="row">
                     <div class="column">
                         <div class="modal-content">
-                            <form>
+                            <form class="add_post_modal_form">
                                 <fieldset>
-                                    <label for="nameField">Title</label>
-                                    <input type="text" placeholder="CJ Patoilo" id="nameField">
-                                    <label for="ageRangeField">Category</label>
-                                    <select id="ageRangeField">
-                                        <option value="0-13">0-13</option>
-                                        <option value="14-17">14-17</option>
-                                        <option value="18-23">18-23</option>
-                                        <option value="24+">24+</option>
-                                    </select>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label for="nameField">Title</label>
+                                            <input type="text" placeholder="CJ Patoilo" id="nameField">
+                                        </div>
+                                        <div class="column">
+                                            <label for="ageRangeField">Category</label>
+                                            <select id="ageRangeField">
+                                                <option value="0-13">0-13</option>
+                                                <option value="14-17">14-17</option>
+                                                <option value="18-23">18-23</option>
+                                                <option value="24+">24+</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
                                     <label for="commentField">Code Notes</label>
-                                    <textarea placeholder="Hi CJ …" id="commentField"></textarea>
+                                    <textarea placeholder="//..." id="commentField" rows="3"></textarea>
                                     <div class="float-right">
                                         <input type="checkbox" id="confirmField">
                                         <label class="label-inline" for="confirmField">Send a copy to yourself</label>
@@ -60,13 +67,14 @@
                             <h5>Code title</h5>
                             <img class="user-feed-avatar" src="https://via.placeholder.com/350x250" alt="">
                         </div>
+                        <small><span class="code-note">Code Notes</span></small>
                         <div class="code-note-wrapper">
-                            <small><span class="code-note">//</span> Bacon ipsum dolor amet chicken meatball
-                                ribeye jerky. Flank sirloin ribeye,
-                                sausage jowl cow turkey ham beef kevin alcatra shoulder brisket kielbasa.
-                                Shoulder prosciutto spare ribs, biltong brisket bresaola leberkas ham pork
-                                chop pancetta kielbasa. Corned beef tongue pig t-bone ongue pig
-                                t-bone ongue t-bone.</small>
+                                <small>Bacon ipsum dolor amet chicken meatball
+                                    ribeye jerky. Flank sirloin ribeye,
+                                    sausage jowl cow turkey ham beef kevin alcatra shoulder brisket kielbasa.
+                                    Shoulder prosciutto spare ribs, biltong brisket bresaola leberkas ham pork
+                                    chop pancetta kielbasa. Corned beef tongue pig t-bone ongue pig
+                                    t-bone ongue t-bone.</small>
                         </div>
                         <pre>
                             <code class="code-block">

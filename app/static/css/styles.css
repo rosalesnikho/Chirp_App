@@ -9,6 +9,7 @@ Global styles
     --gray-blue: #f1f3f5;
     --gray: #D3D3D3;
     --purple: #9b4dca;
+    --light-purple: #ddc3ed;
     --green: #55a379;
     --teal: #07a3a2;
     --clay: #cc8f7a;
@@ -29,6 +30,8 @@ blockquote {
 
 body {
     background-color: var(--gray-blue);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .card {
@@ -36,7 +39,6 @@ body {
     padding: 1.5em;
     margin-right: 1em;
     margin-bottom: 1em;
-    /*border: 1px solid lightgrey;*/
     border-radius: .1em;
     box-shadow: 0 6px 18px 3px rgba(0,0,0,0.1);
     -webkit-box-shadow: 0 6px 18px 3px rgba(0,0,0,0.1);
@@ -112,11 +114,16 @@ body {
     padding: 1.5em;
     margin-right: 1em;
     margin-bottom: 1em;
-    border-left: .1em solid var(--purple);
+    border-left: .1em solid var(--light-purple);
     border-radius: .1em;
     box-shadow: 0 6px 18px 3px rgba(0,0,0,0.1);
     -webkit-box-shadow: 0 6px 18px 3px rgba(0,0,0,0.1);
     -moz-box-shadow: 0 6px 18px 3px rgba(0,0,0,0.1);
+}
+
+.feed-card:hover {
+    transition: ease-in 150ms;
+    border-left: .1em solid var(--purple);
 }
 
 .feed-header {
@@ -206,4 +213,8 @@ body {
 
 .modal-content form {
     padding: 1em;
+}
+
+.add_post_modal_form textarea {
+    resize: vertical;
 }
