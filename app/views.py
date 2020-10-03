@@ -12,10 +12,12 @@ class Register(generic.CreateView):
     template_name = 'authentication/register.html'
 
 
+# GET Request for login form
 def get_login_form(request):
     return render(request, 'authentication/login.html')
 
 
+# POST Request to authenticate users
 def authenticate_user(request):
     email = request.POST['email']
     password = request.POST['password']
@@ -28,9 +30,16 @@ def authenticate_user(request):
         return redirect('/login')
 
 
+# GET Dashboard
 def get_dashboard(request):
     pass
 
 
+# Dashboard
 def dashboard(request):
-    return render(request, 'dashboard.html')
+    return render(request, 'dashboard.html', {})
+
+
+# POST Request Add post
+def add_post(request):
+    return redirect('/')
