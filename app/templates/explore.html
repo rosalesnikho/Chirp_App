@@ -1,10 +1,194 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends '_base.html' %}
+{% block title %}Dashboard{% endblock %}
 
-</body>
-</html>
+{% block content %}
+    {% if user.is_authenticated %}
+        <div class="row">
+            <div class="column column-25">
+                <div class="profile-nav-wrapper">
+                    <img src="https://via.placeholder.com/350x250" alt="">
+                    <div class="">
+                        <h5>{{ user.email }}</h5>
+                        <section class="side-profile-nav">
+                            <ul class="nav-links">
+                                <li class="nav-item active-link"><a href="dashboard">Dashboard</a></li>
+                                <li class="nav-item"><a href="">Explore</a></li>
+                                <li class="nav-item"><a href="#">Messages</a></li>
+                                <li class="nav-item"><a href="#">Bookmarks</a></li>
+                            </ul>
+                        </section>
+                        <button id="add_post_btn" class="button  button_small">Add Note</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal content -->
+            <div id="add_post_modal" class="modal container">
+                <div class="row">
+                    <div class="column">
+                        <div class="modal-content">
+                            <form class="add_post_modal_form">
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label for="nameField">Title</label>
+                                            <input type="text" placeholder="CJ Patoilo" id="nameField">
+                                        </div>
+                                        <div class="column">
+                                            <label for="ageRangeField">Category</label>
+                                            <select id="ageRangeField">
+                                                <option value="0-13">0-13</option>
+                                                <option value="14-17">14-17</option>
+                                                <option value="18-23">18-23</option>
+                                                <option value="24+">24+</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <label for="commentField">Code Notes</label>
+                                    <textarea placeholder="//..." id="commentField" rows="3"></textarea>
+                                    <div class="float-right">
+                                        <input type="checkbox" id="confirmField">
+                                        <label class="label-inline" for="confirmField">Send a copy to yourself</label>
+                                    </div>
+                                    <input class="button-primary" type="submit" value="Send">
+                                    <input class="button-outline close" type="button" value="Cancel">
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {# Add Note Modal Form #}
+            <div class="column column-50">
+                <!-- The Feed  -->
+                <section class="dashboard-feed">
+                    <article class="user-feed feed-card">
+                        <div class="feed-header">
+                            <h5>Code title</h5>
+                            <img class="user-feed-avatar" src="https://via.placeholder.com/350x250" alt="">
+                        </div>
+                        <small><span class="code-note">Code Notes</span></small>
+                        <div class="code-note-wrapper">
+                            <small>Bacon ipsum dolor amet chicken meatball
+                                ribeye jerky. Flank sirloin ribeye,
+                                sausage jowl cow turkey ham beef kevin alcatra shoulder brisket kielbasa.
+                                Shoulder prosciutto spare ribs, biltong brisket bresaola leberkas ham pork
+                                chop pancetta kielbasa. Corned beef tongue pig t-bone ongue pig
+                                t-bone ongue t-bone.</small>
+                        </div>
+                        <pre>
+                            <code class="code-block">
+                                .milligram {
+                                    color: #9b4dca;
+                                }
+                            </code>
+                        </pre>
+
+                        <div>
+                            <button class="button  button_small">Chirp</button>
+                        </div>
+
+                    </article>
+                    <article class="user-feed feed-card">
+                        <div class="feed-header">
+                            <h5>Code title</h5><small>{{ user.email }}</small>
+                        </div>
+                        <pre class="code-block">
+                            <code>
+                                @media (min-width: @screen-sm-min) // >= 768px (small tablet)
+                            </code>
+                        </pre>
+
+                    </article>
+                    <article class="user-feed feed-card">
+                        <div class="feed-header">
+                            <h5>Code title</h5>
+                        </div>
+                        <pre class="code-block">
+                            <code>
+                           .feed-header {
+                                width: 100%;
+                                border-bottom: 1px solid var(--gray);
+                            }
+                        </code>
+                        </pre>
+
+                    </article>
+                    <article class="user-feed feed-card">
+                        <pre class="code-block">
+                            <code>
+                                "hello".repeat(3)
+                                "hello".includes("ll")
+                                "hello".startsWith("he")
+                                "hello".padStart(8) // " hello"
+                                "hello".padEnd(8) // "hello "
+                                "hello".padEnd(8, '!') // hello!!!
+                                "\u1E9B\u0323".normalize("NFC")
+                            </code>
+                        </pre>
+                    </article>
+                    <article class="user-feed feed-card">
+                        <code class="code-block">
+                            const byte = 2 ** 8
+                            // Same as: Math.pow(2, 8)
+                        </code>
+                    </article>
+
+                </section>
+            </div>
+            <div class="column column-25">
+                <article class="user-feed trending-card">
+                    <div class="feed-header">
+                        <h5>Trending Topics</h5>
+                    </div>
+                    <span class="trending-tags">
+                        javascript
+                    </span>
+                    <span class="trending-tags">
+                        css
+                    </span>
+                    <span class="trending-tags">
+                        django
+                    </span>
+                    <span class="trending-tags">
+                        html
+                    </span>
+                    <span class="trending-tags">
+                        react
+                    </span>
+                    <span class="trending-tags">
+                        angular
+                    </span>
+                    <span class="trending-tags">
+                        html
+                    </span>
+                    <span class="trending-tags">
+                        react
+                    </span>
+                    <span class="trending-tags">
+                        angular
+                    </span>
+                    <span class="trending-tags">
+                        javascript
+                    </span>
+                    <span class="trending-tags">
+                        css
+                    </span>
+                    <span class="trending-tags">
+                        django
+                    </span>
+                </article>
+            </div>
+        </div>
+    {% else %}
+        <div class="container">
+            <h5>Account Required</h5>
+            <a href="{% url 'login' %}">
+                <button value="">Login</button>
+            </a>
+            <a href="{% url 'register' %}">
+                <button value="">Register</button>
+            </a>
+        </div>
+    {% endif %}
+{% endblock %}
