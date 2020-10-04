@@ -19,6 +19,16 @@ Global styles
     --black: #000
 }
 
+.feather {
+    width: 12px;
+    height: 12px;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
 section {
     margin-bottom: .9em;
 }
@@ -103,9 +113,30 @@ body {
     text-decoration: none;
 }
 
-/* Content */
+
+/* DASHBOARD STYLES */
+.dashboard_single_post {
+    padding-left: .3em;
+    padding-bottom: 0;
+    background-color: var(--white);
+    border-left: .1em solid var(--light-purple);
+    border-top: .1em solid var(--gray-blue);
+    border-bottom: .1em solid var(--gray-blue);
+}
+
+.dashboard_single_post small {
+    margin-bottom: .3em;
+}
+
+.dashboard_single_post:hover {
+    transition: ease-in 150ms;
+    border-left: .1em solid var(--purple);
+    background-color: var(--light-purple);
+}
+
+ /*Content*/
 .content-wrapper {
-    margin-top: 6em;
+    margin-top: 4em;
 }
 
 /* Feed Card */
@@ -178,7 +209,6 @@ body {
 }
 
 /* Login Page */
-
 
 /* Form Modal */
 /* The Modal (background) */

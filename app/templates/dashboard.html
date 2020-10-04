@@ -4,17 +4,16 @@
 {% block content %}
     {% if user.is_authenticated %}
         <div class="row">
-            <div class="column column-25">
+            <div class="column column-10">
                 <div class="profile-nav-wrapper">
-                    <img src="https://via.placeholder.com/350x250" alt="">
                     <div class="">
-                        <h5>{{ user.email }}</h5>
                         <section class="side-profile-nav">
                             <ul class="nav-links">
-                                <li class="nav-item active-link"><a href="/">Dashboard</a></li>
-                                <li class="nav-item"><a href="">Explore</a></li>
-                                <li class="nav-item"><a href="#">Messages</a></li>
-                                <li class="nav-item"><a href="#">Bookmarks</a></li>
+                                <li class="nav-item active-link"><a href="/"><i data-feather="hash"></i>JS</a></li>
+                                <li class="nav-item"><a href=""><i data-feather="hash"></i>Python</a></li>
+                                <li class="nav-item"><a href=""><i data-feather="hash"></i></a>HTML</li>
+                                <li class="nav-item"><a href=""><i data-feather="hash"></i></a>CSS3</li>
+                                <li class="nav-item"><a href=""><i data-feather="hash"></i></a>Algos</li>
                             </ul>
                         </section>
                         <button id="add_post_btn" class="button  button_small">Add Note</button>
@@ -55,6 +54,25 @@
                                 </fieldset>
                             </form>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column column-30">
+                <div class="">
+                    <div class="dashboard_single_post">
+                        <small>Post title</small>
+                    </div>
+                    <div class="dashboard_single_post">
+                        <small>Post title</small>
+                    </div>
+                    <div class="dashboard_single_post">
+                        <small>Post title</small>
+                    </div>
+                    <div class="dashboard_single_post">
+                        <small>Post title</small>
+                    </div>
+                    <div class="dashboard_single_post">
+                        <small>Post title</small>
                     </div>
                 </div>
             </div>
@@ -136,49 +154,7 @@
 
                 </section>
             </div>
-            <div class="column column-25">
-                <article class="user-feed trending-card">
-                    <div class="feed-header">
-                        <h5>Trending Topics</h5>
-                    </div>
-                    <span class="trending-tags">
-                        javascript
-                    </span>
-                    <span class="trending-tags">
-                        css
-                    </span>
-                    <span class="trending-tags">
-                        django
-                    </span>
-                    <span class="trending-tags">
-                        html
-                    </span>
-                    <span class="trending-tags">
-                        react
-                    </span>
-                    <span class="trending-tags">
-                        angular
-                    </span>
-                    <span class="trending-tags">
-                        html
-                    </span>
-                    <span class="trending-tags">
-                        react
-                    </span>
-                    <span class="trending-tags">
-                        angular
-                    </span>
-                    <span class="trending-tags">
-                        javascript
-                    </span>
-                    <span class="trending-tags">
-                        css
-                    </span>
-                    <span class="trending-tags">
-                        django
-                    </span>
-                </article>
-            </div>
+
         </div>
     {% else %}
         <div class="container">

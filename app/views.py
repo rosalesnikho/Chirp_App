@@ -43,3 +43,8 @@ def dashboard(request):
 # POST Request Add post
 def add_post(request):
     return redirect('/')
+
+
+# GET Explorer
+def explore(request):
+    return render(request, 'explore.html', {})
