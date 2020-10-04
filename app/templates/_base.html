@@ -43,21 +43,6 @@
 	selector.classList.add('magictime', 'vanishIn')
 </script>
 
-{# Sticky Header #}
-<script>
-	window.onscroll = function() {stickyNavFunction()};
-
-	var navbar = document.getElementById("navbar");
-	var sticky = navbar.offsetTop;
-
-	function stickyNavFunction() {
-		if (window.pageYOffset >= sticky) {
-			navbar.classList.add("sticky")
-		} else {
-			navbar.classList.remove("sticky");
-		}
-	}
-</script>
 {# Feather Icons #}
 <script>
 	feather.replace()
